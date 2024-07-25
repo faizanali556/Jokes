@@ -1,0 +1,198 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  background-color: aqua;
+}
+.container {
+  position: relative;
+  top: 30px;
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  background: url("./rebot.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left center;
+}
+#button {
+  cursor: pointer;
+  outline: none;
+  width: 200px;
+  height: 50px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  color: white;
+  background-color: #ff3482;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 5px 5px 30px 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease;
+}
+p {
+  width: 52vw;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  margin-top: 20px;
+  color: black;
+  font-weight: bold;
+  /* text-align: justify; */
+
+  background-color: rgba(245, 245, 245, 0.8);
+  padding: 1.5rem 2.5rem;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+}
+
+p:hover {
+  transform: scale(1.2);
+  background-color: #f3a0a0;
+}
+
+#button:hover {
+  transform: scale(1.2);
+  background-color: #ff5c9a;
+}
+
+#button:active {
+  transform: scale(0.98);
+}
+
+#button:disabled {
+  cursor: default;
+  filter: brightness(30%);
+}
+.icons {
+  height: 100px;
+}
+.fa-instagram {
+  font-size: 30px;
+  padding-top: 30px;
+  padding-left: 10px;
+  color: #ff3482;
+}
+.fa-facebook {
+  font-size: 30px;
+  padding-top: 30px;
+
+  color: #ff3482;
+}
+.spinner {
+  position: absolute;
+  bottom: 100px;
+  width: 9px;
+  height: 9px;
+  display: none;
+}
+
+.spinner div {
+  position: absolute;
+  width: 50%;
+  height: 150%;
+  background: #474bff;
+  transform: rotate(calc(var(--rotation) * 1deg))
+    translate(0, calc(var(--translation) * 1%));
+  animation: spinner-fzua35 1s calc(var(--delay) * 1s) infinite ease;
+}
+
+.spinner div:nth-child(1) {
+  --delay: 0.1;
+  --rotation: 36;
+  --translation: 150;
+}
+
+.spinner div:nth-child(2) {
+  --delay: 0.2;
+  --rotation: 72;
+  --translation: 150;
+}
+
+.spinner div:nth-child(3) {
+  --delay: 0.3;
+  --rotation: 108;
+  --translation: 150;
+}
+
+.spinner div:nth-child(4) {
+  --delay: 0.4;
+  --rotation: 144;
+  --translation: 150;
+}
+
+.spinner div:nth-child(5) {
+  --delay: 0.5;
+  --rotation: 180;
+  --translation: 150;
+}
+
+.spinner div:nth-child(6) {
+  --delay: 0.6;
+  --rotation: 216;
+  --translation: 150;
+}
+
+.spinner div:nth-child(7) {
+  --delay: 0.7;
+  --rotation: 252;
+  --translation: 150;
+}
+
+.spinner div:nth-child(8) {
+  --delay: 0.8;
+  --rotation: 288;
+  --translation: 150;
+}
+
+.spinner div:nth-child(9) {
+  --delay: 0.9;
+  --rotation: 324;
+  --translation: 150;
+}
+
+.spinner div:nth-child(10) {
+  --delay: 1;
+  --rotation: 360;
+  --translation: 150;
+}
+
+@keyframes spinner-fzua35 {
+  0%,
+  10%,
+  20%,
+  30%,
+  50%,
+  60%,
+  70%,
+  80%,
+  90%,
+  100% {
+    transform: rotate(calc(var(--rotation) * 1deg))
+      translate(0, calc(var(--translation) * 1%));
+  }
+
+  50% {
+    transform: rotate(calc(var(--rotation) * 1deg))
+      translate(0, calc(var(--translation) * 1.5%));
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    height: 600px;
+  }
+  #button {
+  }
+  p {
+    width: 80vw;
+  }
+  .spinner {
+    bottom: 180px;
+  }
+}
