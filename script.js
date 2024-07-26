@@ -27,16 +27,20 @@ document.getElementById('button').addEventListener('click', function() {
         jokeElement.textContent = jokeText;
   
         // Update social media share links
-        facebookShare.href = `https://www.facebook.com/post?text=${encodeURIComponent(jokeText)}`;
-        twitterShare.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(jokeText)}`;
+       
   
         const utterance = new SpeechSynthesisUtterance(jokeText);
         const voices = window.speechSynthesis.getVoices();
         utterance.voice = voices.find(voice => voice.name === 'Google UK English'); // Choose a voice by name
         utterance.pitch = 1.5;
+        utterance.rate = 1;
+
+        utterance.volume = 0.9;
         window.speechSynthesis.speak(utterance);
         
         loader.style.display = 'none';
+        facebookShare.href = `https://www.facebook.com/?text=${encodeURIComponent(jokeText)}`;
+        twitterShare.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(jokeText)}`;
       })
       .catch(error => {
         console.error('Error fetching joke:', error);
